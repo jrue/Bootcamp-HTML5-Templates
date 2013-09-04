@@ -33,12 +33,8 @@ body.sidebartheme > header{
 	overflow: hidden;
 }
 
-body.darktheme > header{
-
-}
-
 body > header > *{
-	position:r elative;
+	position:relative;
 	width: 75%;
 	margin: 0 auto;
 	padding: 10px;
@@ -71,8 +67,8 @@ nav ul{
 	padding:0;
 }
 
-/* Navigation */
-body.darktheme nav{
+/* DARK THEME & SHELL THEME NAVIGATION */
+body.darktheme nav, body.shelltheme nav{
 	position:fixed;
 	top:0;
 	display:block;
@@ -83,28 +79,28 @@ body.darktheme nav{
 	color:#cccccc;
 }
 
-body.darktheme nav ul{
+body.darktheme nav ul, body.shelltheme nav ul{
 	margin:0;
 	padding:0;
 }
 
-body.darktheme nav li{
+body.darktheme nav li, body.shelltheme nav li{
 	margin:0;
 	padding:0;
 	display:inline-block;
 }
 
-body.darktheme nav li.selected a{
+body.darktheme nav li.selected a, body.shelltheme nav li.selected a{
 	background:#282A33;
 }
 
-body.darktheme nav li a:hover{
+body.darktheme nav li a:hover, body.shelltheme nav li a:hover{
 	cursor: pointer;
 	color: #fff;
 	background: #363F4A;
 }
 
-body.darktheme nav a{
+body.darktheme nav a, body.shelltheme nav a{
 	display: block;
 	padding: 10px 15px;
 	text-decoration: none;
@@ -164,6 +160,56 @@ h2.extraspace{
 	margin:15px 0;
 }
 
+/* Shell theme specific */
+body.shelltheme{
+	height:100%;
+	overflow:hidden;
+	position:relative;
+}
+
+body.shelltheme article img,
+body.shelltheme article iframe,
+body.shelltheme article object,
+body.shelltheme article video,
+body.shelltheme article audio{
+	max-width: 70%;
+	margin-top:20px;
+}
+
+body.shelltheme #slidercontainer{
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+body.shelltheme header, body.shelltheme article{
+	height:100%;
+	float:left;
+	position: relative;
+	top:0;
+	padding: 40px 20px 0;
+}
+
+body.shelltheme div.hometable{
+	display: table;
+	height:100%;
+}
+
+body.shelltheme div.homecell{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0 10%;
+	width:100%;
+	height:100%;
+}
+
+body.shelltheme header{
+	left: 0;
+}
+
+
 @media only screen and (max-width: 720px) {
 
 	#smartphone_menu{
@@ -173,7 +219,7 @@ h2.extraspace{
 		cursor: pointer;
 	}
 
-	body.darktheme nav li{
+	body.darktheme nav li, body.shelltheme nav li{
 		display: block;
 	}
 
@@ -226,53 +272,53 @@ h2.extraspace{
 @media only screen and (min-width: 720px) {
 
   #smartphone_menu{
-    display:none;
+	display:none;
   }
 
   /* Navigation */
   body.sidebartheme nav{
-    position:fixed;
-    top:0;
-    left:0;
-    display:table;
-    width:225px;
-    height:100%;
-    background:#364050 url('../images/bg1.png');
-    text-align:center;
-    z-index:100;
-    color:#cccccc;
-    box-shadow: inset -0.1em 0em 0.35em 0em rgba(0,0,0,0.15);
+	position:fixed;
+	top:0;
+	left:0;
+	display:table;
+	width:225px;
+	height:100%;
+	background:#364050 url('../images/bg1.png');
+	text-align:center;
+	z-index:100;
+	color:#cccccc;
+	box-shadow: inset -0.1em 0em 0.35em 0em rgba(0,0,0,0.15);
   }
 
   body.sidebartheme nav ul{
-    display:table-cell;
-    vertical-align:middle;
+	display:table-cell;
+	vertical-align:middle;
   }
 
   body.sidebartheme nav li{
-    padding:10px 15px;
-    border-top:solid 1px rgba(0,0,0,0.25);
-    box-shadow:inset 0px 1px 0px 0px rgba(255,255,255,0.075);
+	padding:10px 15px;
+	border-top:solid 1px rgba(0,0,0,0.25);
+	box-shadow:inset 0px 1px 0px 0px rgba(255,255,255,0.075);
   }
   body.sidebartheme nav li:first-child{
-    border:0;
-    box-shadow: none;
+	border:0;
+	box-shadow: none;
   }
   body.sidebartheme nav li.selected a{
-    background-color: rgba(0,0,0,0.15) !important;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0.25em 0 rgba(0,0,0,0.25);
-    font-weight: 700;
-    color: #fff;
-    border-radius: 0.4em;
+	background-color: rgba(0,0,0,0.15) !important;
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0.25em 0 rgba(0,0,0,0.25);
+	font-weight: 700;
+	color: #fff;
+	border-radius: 0.4em;
   }
   body.sidebartheme nav li a:hover{
-    cursor:pointer;
-    color:#fff;
+	cursor:pointer;
+	color:#fff;
   }
   body.sidebartheme nav a{
-    padding:10px;
-    display:block;
-    text-decoration:none;
-    color:#ccc;
+	padding:10px;
+	display:block;
+	text-decoration:none;
+	color:#ccc;
   }
 }
