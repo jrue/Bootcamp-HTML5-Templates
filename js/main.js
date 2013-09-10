@@ -111,6 +111,28 @@ $(document).ready(function($){
 		if($(window).width() < 720){ $('nav').css('min-height', '');} else {$('nav').css('min-height', $(window).height());}
 	}
 
+	var http = 'http:';
+
+	$('iframe').each(function(){
+		if($(this).attr('src').substr(0, 2) === '//'){
+			if(document.URL.substr(0, 4) === 'file'){
+				$(this).attr('src', http.concat($(this).attr('src')));
+			}
+		}
+		if($(this).attr('height') && $(this).attr('width') !== '100%' && !$(this).data('no-resize'))
+			$(this).attr('height', (($(window).width()-230)*0.95) * $(this).attr('height') / $(this).attr('width')  ).attr('width', '100%');
+
+	});
+
+
+
+	/**
+	 * Set height on homecontainer div for absolute centering
+	 */
+	var homeContainerHeight = 20;
+	$('#homecontainer *').each(function(){ homeContainerHeight += $(this).outerHeight(true); });
+	$('#homecontainer').height(homeContainerHeight);
+
 	/**
 	 * Some responsive magic when window is resized
 	 *
@@ -124,6 +146,9 @@ $(document).ready(function($){
 		if($('body').hasClass('sidebartheme')){
 			if($(window).width() < 720){ $('nav').css('min-height', '');} else {$('nav').css('min-height', $(window).height());}
 		}
+		homeContainerHeight = 20;
+		$('#homecontainer *').each(function(){ homeContainerHeight += $(this).outerHeight(true); });
+		$('#homecontainer').height(homeContainerHeight);
 	});
 
 	/**

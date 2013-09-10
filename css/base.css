@@ -33,12 +33,35 @@ body.sidebartheme > header{
 	overflow: hidden;
 }
 
+body > header{
+	position:relative;
+	width:100%;
+	height:100%;
+	display:block;
+}
+
 body > header > *{
 	position:relative;
 	width: 75%;
 	margin: 0 auto;
 	padding: 10px;
 	display: block;
+}
+
+#homecontainer{
+	position: absolute;
+	margin:auto;
+	width:75%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+body.sidebartheme #homecontainer{
+	padding-left: 250px;
+	width:90%;
 }
 
 body > header h1{
@@ -221,6 +244,10 @@ body.shelltheme header{
 
 	body.darktheme nav li, body.shelltheme nav li{
 		display: block;
+	}
+
+	body.sidebartheme #homecontainer{
+		padding-left:10px;
 	}
 
 	body.sidebartheme article{
