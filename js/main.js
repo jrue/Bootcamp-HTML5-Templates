@@ -119,8 +119,17 @@ $(document).ready(function($){
 				$(this).attr('src', http.concat($(this).attr('src')));
 			}
 		}
-		if($(this).attr('height') && $(this).attr('width') !== '100%' && !$(this).data('no-resize'))
-			$(this).attr('height', (($(window).width()-230)*0.95) * $(this).attr('height') / $(this).attr('width')  ).attr('width', '100%');
+		if($(this).attr('height') && $(this).attr('width') !== '100%' && !$(this).data('no-resize')){
+
+			var newHeight = ($(window).width() - 230) * 0.95 * $(this).attr('height') / $(this).attr('width');
+			
+			if(newHeight > $(window).height() - 50){
+				newHeight = $(window).height() * 0.8;
+			}
+
+			$(this).attr('height',  newHeight );
+			$(this).attr('width', '100%');
+		}
 
 	});
 
